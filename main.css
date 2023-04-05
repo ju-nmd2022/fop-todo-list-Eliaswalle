@@ -1,0 +1,38 @@
+* {
+  font-family: sans-serif;
+  padding: 1em;
+  margin: 1em;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+}
+.button-add {
+  width: 100px;
+  height: 50px;
+  border-radius: 20px;
+  border-style: none;
+  cursor: pointer;
+}
+.input {
+  border-radius: 20px;
+  border: none;
+  background-color: grey;
+  color: white;
+}
+.container {
+  background-color: rgb(219, 220, 221);
+}
+.theToDoList {
+  background-color: darkgrey;
+  display: flex;
+}
+.button-yes {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button-x {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
