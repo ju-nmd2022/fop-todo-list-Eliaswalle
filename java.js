@@ -26,12 +26,14 @@ function taskLoop() {
   listElement.innerHTML = "";
   for (let task of taskArray) {
     const taskElement = document.createElement("div");
+    taskElement.classList.add("taskDiv");
     taskElement.innerText = task;
     listElement.appendChild(taskElement);
 
     const removeButton = document.createElement("button");
     removeButton.innerText = "Remove";
-    listElement.appendChild(removeButton);
+    taskElement.appendChild(removeButton);
+    removeButton.classList.add("remove");
 
     const index = taskArray.indexOf(task);
 
@@ -41,17 +43,15 @@ function taskLoop() {
     });
 
     const completeButton = document.createElement("button");
-    completeButton.innerText
+    completeButton.innerText = "complete";
+    taskElement.appendChild(completeButton);
+    completeButton.classList.add("complete");
+
+
+    if (completeButton = pressed){
+      taskElement.innerText = "Task complete";
+    }
   }
+
 }
 taskLoop();
-// function inputElement() {
-//   const listOfTask = document.getElementById("input-to-do");
-//   listOfTask.innerText = taskArray;
-// }
-
-// function inputTask() {
-//   let valueOfTask = document.getElementById("input-to-do").value;
-//   taskArray.push(valueOfTask);
-//   document.getElementById("listOfTask").innerHTML = taskArray;
-// }

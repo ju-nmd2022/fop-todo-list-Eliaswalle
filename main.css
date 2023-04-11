@@ -27,3 +27,19 @@
     background-color: rgb(219, 220, 221);
 
 }
+.taskDiv{
+background-color: rgb(164, 163, 163);
+align-items: center;
+color: white;
+border-radius: 60px;
+}
+.remove{
+ cursor: pointer;
+ border: none;
+ border-radius: 20px;
+}
+.complete{
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+ }
