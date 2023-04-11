@@ -18,8 +18,6 @@ function inputElement() {
 
   taskArray.push(taskField);
   localStorage.taskField = JSON.stringify(taskArray);
-  console.log(localStorage);
-  console.log(taskArray);
 }
 
 function taskLoop() {
@@ -47,11 +45,28 @@ function taskLoop() {
     taskElement.appendChild(completeButton);
     completeButton.classList.add("complete");
 
-
-    if (completeButton = pressed){
-      taskElement.innerText = "Task complete";
-    }
+    completeButton.addEventListener("click", function () {
+      taskElement.style.textDecoration = "line-through";
+    });
   }
-
 }
 taskLoop();
+
+// const doneButtonElement = document.createElement("button");
+// doneButtonElement.innerText = "Completed";
+// toDoListElement.appendChild(doneButtonElement);
+// doneButtonElement.classList.add("done");
+
+// doneButtonElement.addEventListener("click", function() {
+//   // Add a line-through style to the text
+//   toDoListElement.style.textDecoration = "line-through";
+
+//   // Save the line-through style to localStorage
+//   localStorage.setItem("taskElementStyle", "line-through");
+// });
+
+// // Retrieve the line-through style from localStorage on page load
+// const taskElementStyle = localStorage.getItem("taskElementStyle");
+// if (taskElementStyle) {
+//   taskElement.style.textDecoration = taskElementStyle;
+// }
