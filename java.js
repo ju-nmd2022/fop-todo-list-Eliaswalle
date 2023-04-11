@@ -2,7 +2,6 @@ let taskArray = [];
 const listElement = document.getElementById("listOfTask");
 
 if (localStorage.taskField) {
-  // localStorage.taskField = JSON.stringify(taskArray);
   taskArray = JSON.parse(localStorage.taskField);
 }
 const addButton = document.getElementById("button-add-list");
@@ -14,7 +13,6 @@ addButton.addEventListener("click", function () {
 function inputElement() {
   let inputField = document.getElementById("input-to-do");
   const taskField = inputField.value;
-  // taskArray.push(taskField);
 
   taskArray.push(taskField);
   localStorage.taskField = JSON.stringify(taskArray);
@@ -40,33 +38,35 @@ function taskLoop() {
       taskLoop();
     });
 
+    //old code!!
+    // const completeButton = document.createElement("button");
+    // completeButton.innerText = "complete";
+    // taskElement.appendChild(completeButton);
+    // completeButton.classList.add("complete");
+
+    // completeButton.addEventListener("click", function () {
+    //   taskElement.style.textDecoration = "line-through";
+    // });
+
+    // with this code below i used the help off chatGPT to save my "line-through" with local storage!
+    //The code from 43-51 was the code that i did not get help from chat to get reference on what i got help with!!
+
     const completeButton = document.createElement("button");
     completeButton.innerText = "complete";
     taskElement.appendChild(completeButton);
     completeButton.classList.add("complete");
 
+    // Check if the task has been completed before and update the style if necessary
+    if (localStorage.getItem(taskElement.innerText)) {
+      taskElement.style.textDecoration = "line-through";
+    }
+
     completeButton.addEventListener("click", function () {
       taskElement.style.textDecoration = "line-through";
+
+      // Save the completion state to local storage
+      localStorage.setItem(taskElement.innerText, "completed");
     });
   }
 }
 taskLoop();
-
-// const doneButtonElement = document.createElement("button");
-// doneButtonElement.innerText = "Completed";
-// toDoListElement.appendChild(doneButtonElement);
-// doneButtonElement.classList.add("done");
-
-// doneButtonElement.addEventListener("click", function() {
-//   // Add a line-through style to the text
-//   toDoListElement.style.textDecoration = "line-through";
-
-//   // Save the line-through style to localStorage
-//   localStorage.setItem("taskElementStyle", "line-through");
-// });
-
-// // Retrieve the line-through style from localStorage on page load
-// const taskElementStyle = localStorage.getItem("taskElementStyle");
-// if (taskElementStyle) {
-//   taskElement.style.textDecoration = taskElementStyle;
-// }
