@@ -50,6 +50,7 @@ function taskLoop() {
 
     // with this code below i used the help off chatGPT to save my "line-through" with local storage!
     //The code from 43-51 was the code that i did not get help from chat to get reference on what i got help with!!
+    //Also got help from a classmate to solve some issues on displaying the array on the screen using a for loop.
 
     const completeButton = document.createElement("button");
     completeButton.innerText = "complete";
